@@ -2,7 +2,7 @@ var User = function(name, email){
   this.name = name;
   this.email = email;
   this.score = 0;
-}
+};
 
 User.prototype = {
  getScore: function(questions) {
