@@ -1,0 +1,12 @@
+#show-user-score{
+	display:none;
+}
+
+.container {
+  width:525px;;
+  margin:100px auto;	
+}
+
+input {
+	margin-bottom:15px;
+}
