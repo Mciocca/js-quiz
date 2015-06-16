@@ -11,13 +11,13 @@ Question.prototype = {
     var qnum = 'q-'+current;
     document.getElementById('question-title').innerText = this.question;
     var btn = current !== (total-1) ? "<button id='next-button'>Next Question</button>" : "<button id='next-button'>Finish Quiz</button>";
-    var htmlString = this.createChoicesHtml();
+    var htmlString = this.createChoicesHtml(qnum);
     htmlString += btn;
     return htmlString;
   },
   
-  createChoicesHtml : function(){
-     var htmlString = '';
+  createChoicesHtml : function(qnum){
+    var htmlString = '';
     for (var index = 0; index < this.choices.length; index++) {
       htmlString += "<input class='question-input' name='"+qnum+"' type=\"radio\" value='" + this.choices[index] + "'>" + this.choices[index] + "</input> <br/>";
     }
