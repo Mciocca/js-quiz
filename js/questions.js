@@ -1,4 +1,4 @@
-var Question = function (question, choices,  correct) {
+var Question = function (question, choices, correct) {
   this.question = question;
   this.choices = choices;
   this.correctAnswer = correct;
@@ -8,25 +8,25 @@ var Question = function (question, choices,  correct) {
 Question.prototype = {
 
   createQuestionHtml: function (current, total) {
-    var qnum = 'q-'+current;
+    var qnum = 'q-' + current;
     document.getElementById('question-title').innerText = this.question;
-    var btn = current !== (total-1) ? "<button id='next-button'>Next Question</button>" : "<button id='next-button'>Finish Quiz</button>";
+    var btn = current !== (total - 1) ? "<button id='next-button'>Next Question</button>" : "<button id='next-button'>Finish Quiz</button>";
     var htmlString = this.createChoicesHtml(qnum);
     htmlString += btn;
     return htmlString;
   },
-  
-  createChoicesHtml : function(qnum){
+
+  createChoicesHtml: function (qnum) {
     var htmlString = '';
     for (var index = 0; index < this.choices.length; index++) {
-      htmlString += "<input class='question-input' name='"+qnum+"' type=\"radio\" value='" + this.choices[index] + "'>" + this.choices[index] + "</input> <br/>";
+      htmlString += "<input class='question-input' name='" + qnum + "' type=\"radio\" value='" + this.choices[index] + "'>" + this.choices[index] + "</input> <br/>";
     }
     return htmlString;
   },
 
   saveUserAnswer: function (qnum) {
     var $this = this;
-    var els = document.querySelectorAll('input[name='+qnum+']');
+    var els = document.querySelectorAll('input[name=' + qnum + ']');
 
     for (var index = 0; index < els.length; index++) {
       var element = els[index];

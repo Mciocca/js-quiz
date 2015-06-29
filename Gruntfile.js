@@ -1,22 +1,22 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
-	uglify: {
-	  my_target: {
-	    files: {
-		  './js/output/main.js': './js/*.js'     	
-		  }
-	  }	
-	},
-	
-	watch: {
-	  scripts: {
-		  files: ['./js/questions.js','./js/user.js','./js/quiz.js','./js/main.js'],
-      tasks: ['uglify']  
-	  }	
-	}		
-		
+
+    uglify: {
+      my_target: {
+        files: {
+          './js/output/main.js': './js/*.js'
+        }
+      }
+    },
+
+    watch: {
+      scripts: {
+        files: ['./js/questions.js', './js/user.js', './js/quiz.js', './js/main.js'],
+        tasks: ['uglify']
+      }
+    }
+
   });
 
 
